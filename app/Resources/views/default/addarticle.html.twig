@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Roles{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div class="container">
+            <h1>Ajouter un Article</h1>
+            <form action="{{ path('addarticleApi') }}" method="POST">
+                <div class="form-group">
+                    <label for="pseudo">Titre</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="login">Corps</label>
+                    <input type="text" class="form-control" id="body" name="body">
+                </div>
+                <div class="form-group">
+                    <label for="name">Auteur</label>
+                    <select class="form-control" id="user" name="pseudo">
+                        {% for  user  in users %}
+                            <option>{{ user.pseudo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block metas %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+
+
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

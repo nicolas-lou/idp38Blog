@@ -65,13 +65,9 @@ class DefaultController extends Controller
     /**
      * @Route("/adduser", name="adduser")
      */
-    public function addUserAction(Request $request, RoleService $roleService){
+    public function addUserAction(RoleService $roleService){
 
         $roles = $roleService->getAllRoles();
-
-
-
-
 
         return $this->render('default/adduser.html.twig', ['roles'=>$roles]);
     }
