@@ -37,6 +37,10 @@
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
+        "server": "php bin/console server:start &",
+        "serverstop": "php bin/console server:stop",
+        "cacheclear": "php bin/console cache:clear",
+        "entity": "php bin/console generate:doctrine:entity",
         "symfony-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",

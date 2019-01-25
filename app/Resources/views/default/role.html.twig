@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Roles{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div class="container">
+            <h1>Roles List</h1>
+            <div id="roles">
+                {% for  role  in roles %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ role.name }}</h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block metas %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        #roles{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: auto;
+            align-items: center;
+        }
+        .card{
+            width: 50px;
+            margin-right: 5px;
+            text-align: center;
+        }
+
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
